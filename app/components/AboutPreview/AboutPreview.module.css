@@ -1,0 +1,181 @@
+.section {
+  position: relative;
+
+  padding: 120px 0;
+
+  background: var(--color-off-white);
+  color: var(--color-navy);
+
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--color-gray);
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.label span {
+  width: 34px;
+  height: 1px;
+
+  background: var(--color-gold);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+
+  gap: 80px;
+
+  margin-top: 55px;
+}
+
+.headingWrapper h2 {
+  max-width: 760px;
+
+  font-size: clamp(42px, 5vw, 72px);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+}
+
+.headingWrapper h2 span {
+  display: block;
+  color: var(--color-gold);
+}
+
+.textWrapper {
+  max-width: 500px;
+
+  padding-top: 8px;
+}
+
+.textWrapper p {
+  margin-bottom: 20px;
+
+  color: #555;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-top: 18px;
+
+  color: var(--color-navy);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  border-bottom: 1px solid var(--color-gold);
+
+  padding-bottom: 7px;
+
+  transition:
+    color var(--transition-fast),
+    gap var(--transition-fast);
+}
+
+.link svg {
+  font-size: 17px;
+}
+
+.link:hover {
+  color: var(--color-gold);
+  gap: 13px;
+}
+
+.method {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-top: 90px;
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(13, 27, 42, 0.15);
+
+  color: var(--color-gray);
+
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.method span:nth-child(2),
+.method span:nth-child(3),
+.method span:nth-child(4) {
+  color: var(--color-navy);
+}
+
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .section {
+    padding: 90px 0;
+  }
+
+  .content {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .textWrapper {
+    max-width: 650px;
+  }
+
+  .method {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 18px 30px;
+
+    margin-top: 60px;
+  }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .section {
+    padding: 75px 0;
+  }
+
+  .content {
+    margin-top: 40px;
+  }
+
+  .headingWrapper h2 {
+    font-size: clamp(38px, 11vw, 54px);
+  }
+
+  .textWrapper p {
+    font-size: 15px;
+  }
+
+  .method {
+    margin-top: 50px;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}

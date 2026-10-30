@@ -1,0 +1,303 @@
+.section {
+  position: relative;
+  padding: 120px 0;
+
+  background: var(--color-off-white);
+  color: var(--color-navy);
+
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+}
+
+/* HEADER */
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--color-gray);
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.label span {
+  width: 34px;
+  height: 1px;
+
+  background: var(--color-gold);
+}
+
+.headingRow {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+
+  gap: 80px;
+
+  margin-top: 50px;
+}
+
+.headingRow h2 {
+  max-width: 700px;
+
+  font-size: clamp(42px, 5vw, 72px);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+}
+
+.headingRow h2 span {
+  display: block;
+
+  color: var(--color-gold);
+}
+
+.headingRow p {
+  max-width: 480px;
+
+  padding-top: 8px;
+
+  color: #555;
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* SHOWCASE */
+
+.showcase {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+
+  min-height: 480px;
+
+  margin-top: 80px;
+
+  background: var(--color-navy);
+
+  color: var(--color-white);
+
+  overflow: hidden;
+}
+
+/* VISUAL */
+
+.visual {
+  position: relative;
+
+  min-height: 480px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.visualGlow {
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  border-radius: 50%;
+
+  background: rgba(212, 175, 55, 0.14);
+
+  filter: blur(80px);
+}
+
+.visualNumber {
+  position: relative;
+  z-index: 1;
+
+  color: rgba(212, 175, 55, 0.9);
+
+  font-size: clamp(90px, 13vw, 180px);
+  font-weight: 600;
+  letter-spacing: -0.08em;
+}
+
+.visualLine {
+  position: absolute;
+
+  top: 0;
+  right: 15%;
+
+  width: 1px;
+  height: 45%;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(212, 175, 55, 0.8),
+    transparent
+  );
+}
+
+.visualText {
+  position: absolute;
+
+  left: 30px;
+  bottom: 28px;
+
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+
+  line-height: 1.6;
+}
+
+/* CONTENT */
+
+.showcaseContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  padding: 60px;
+}
+
+.comingSoon {
+  margin-bottom: 24px;
+
+  color: var(--color-gold);
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.showcaseContent h3 {
+  margin-bottom: 24px;
+
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+}
+
+.showcaseContent p {
+  max-width: 470px;
+
+  margin-bottom: 32px;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  width: fit-content;
+
+  padding-bottom: 7px;
+
+  border-bottom: 1px solid var(--color-gold);
+
+  color: var(--color-white);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition:
+    color var(--transition-fast),
+    gap var(--transition-fast);
+}
+
+.link svg {
+  font-size: 17px;
+}
+
+.link:hover {
+  color: var(--color-gold);
+
+  gap: 13px;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+  .section {
+    padding: 90px 0;
+  }
+
+  .headingRow {
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+  }
+
+  .showcase {
+    grid-template-columns: 1fr;
+
+    margin-top: 60px;
+  }
+
+  .visual {
+    min-height: 360px;
+
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .showcaseContent {
+    padding: 50px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .section {
+    padding: 75px 0;
+  }
+
+  .headingRow {
+    margin-top: 40px;
+  }
+
+  .headingRow h2 {
+    font-size: clamp(38px, 11vw, 54px);
+  }
+
+  .headingRow p {
+    font-size: 15px;
+  }
+
+  .showcase {
+    margin-top: 50px;
+  }
+
+  .visual {
+    min-height: 300px;
+  }
+
+  .visualNumber {
+    font-size: 100px;
+  }
+
+  .showcaseContent {
+    padding: 38px 26px 45px;
+  }
+
+  .showcaseContent h3 {
+    font-size: 34px;
+  }
+
+  .showcaseContent p {
+    font-size: 14px;
+  }
+}

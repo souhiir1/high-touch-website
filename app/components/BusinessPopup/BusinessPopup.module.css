@@ -1,0 +1,515 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(3, 10, 17, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  animation: overlayIn 0.4s ease forwards;
+}
+
+/* =========================
+   POPUP
+========================= */
+
+.popup {
+  position: relative;
+
+  width: min(100%, 650px);
+
+  overflow: hidden;
+
+  padding: 46px 52px 42px;
+
+  background:
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(212, 175, 55, 0.13),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      rgb(17, 34, 51),
+      rgb(8, 20, 32)
+    );
+
+  border: 1px solid rgba(212, 175, 55, 0.35);
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.5),
+    0 0 50px rgba(212, 175, 55, 0.08);
+
+  color: var(--color-white);
+
+  animation: popupIn 0.65s cubic-bezier(0.22, 1, 0.36, 1)
+    forwards;
+}
+
+/* =========================
+   GLOW
+========================= */
+
+.glowOne {
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  top: -120px;
+  right: -80px;
+
+  border-radius: 50%;
+
+  background: rgba(212, 175, 55, 0.18);
+
+  filter: blur(60px);
+
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+.glowTwo {
+  position: absolute;
+
+  width: 180px;
+  height: 180px;
+
+  bottom: -120px;
+  left: -100px;
+
+  border-radius: 50%;
+
+  background: rgba(212, 175, 55, 0.08);
+
+  filter: blur(55px);
+}
+
+/* =========================
+   CLOSE
+========================= */
+
+.closeButton {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.closeButton:hover {
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--color-gold);
+  transform: rotate(90deg);
+}
+
+.closeButton svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* =========================
+   TOP LINE
+========================= */
+
+.topLine {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 28px;
+
+  color: var(--color-gold);
+
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+}
+
+.line {
+  width: 28px;
+  height: 1px;
+
+  background: var(--color-gold);
+  opacity: 0.6;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  display: block;
+
+  margin-bottom: 13px;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+}
+
+.content h2 {
+  margin-bottom: 20px;
+
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.content h2 span {
+  color: var(--color-gold);
+
+  text-shadow:
+    0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.mainText {
+  margin-bottom: 8px;
+
+  color: var(--color-white);
+
+  font-size: 19px;
+  font-weight: 500;
+}
+
+.description {
+  max-width: 520px;
+
+  margin-bottom: 25px;
+
+  color: rgba(255, 255, 255, 0.66);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.description strong {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-bottom: 30px;
+}
+
+.services span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 8px 12px;
+
+  border: 1px solid rgba(212, 175, 55, 0.18);
+  border-radius: 2px;
+
+  background: rgba(255, 255, 255, 0.035);
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 10px;
+  letter-spacing: 0.04em;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.services span:hover {
+  border-color: rgba(212, 175, 55, 0.5);
+  background: rgba(212, 175, 55, 0.07);
+  color: var(--color-gold);
+}
+
+.services svg {
+  color: var(--color-gold);
+  font-size: 12px;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  min-height: 52px;
+
+  padding: 0 8px 0 22px;
+
+  background: var(--color-gold);
+  color: var(--color-navy);
+
+  font-size: 13px;
+  font-weight: 650;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 10px 30px rgba(212, 175, 55, 0.14);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.cta::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -120%;
+
+  width: 80%;
+  height: 100%;
+
+  background: linear-gradient(
+    105deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.6s ease;
+}
+
+.cta:hover::before {
+  left: 140%;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+
+  background: var(--color-gold-light);
+
+  box-shadow:
+    0 14px 38px rgba(212, 175, 55, 0.2);
+}
+
+.cta > span {
+  position: relative;
+  z-index: 1;
+}
+
+.ctaIcon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: var(--color-navy);
+  color: var(--color-gold);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.cta:hover .ctaIcon {
+  transform: rotate(5deg) scale(1.05);
+  background: var(--color-white);
+}
+
+.ctaIcon svg {
+  width: 16px;
+  height: 16px;
+
+  transition: transform 0.3s ease;
+}
+
+.cta:hover .ctaIcon svg {
+  transform: translate(2px, -2px);
+}
+
+.bottomText {
+  margin-top: 14px;
+
+  color: rgba(255, 255, 255, 0.38);
+
+  font-size: 10px;
+}
+
+/* =========================
+   DECORATIVE CORNER
+========================= */
+
+.cornerShape {
+  position: absolute;
+
+  right: -50px;
+  bottom: -50px;
+
+  width: 130px;
+  height: 130px;
+
+  border: 1px solid rgba(212, 175, 55, 0.12);
+  border-radius: 50%;
+}
+
+.cornerShape::after {
+  content: "";
+
+  position: absolute;
+  inset: 20px;
+
+  border: 1px solid rgba(212, 175, 55, 0.1);
+  border-radius: 50%;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popupIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+  .overlay {
+    padding: 16px;
+  }
+
+  .popup {
+    padding: 38px 25px 30px;
+  }
+
+  .closeButton {
+    top: 13px;
+    right: 13px;
+  }
+
+  .topLine {
+    margin-bottom: 22px;
+  }
+
+  .content h2 {
+    font-size: 39px;
+  }
+
+  .mainText {
+    font-size: 17px;
+  }
+
+  .description {
+    font-size: 13px;
+  }
+
+  .services {
+    margin-bottom: 25px;
+  }
+
+  .services span {
+    font-size: 9px;
+    padding: 7px 9px;
+  }
+
+  .cta {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .overlay,
+  .popup,
+  .glowOne {
+    animation: none;
+  }
+
+  .cta,
+  .closeButton,
+  .services span {
+    transition: none;
+  }
+}

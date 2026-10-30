@@ -1,0 +1,227 @@
+.section {
+  position: relative;
+
+  padding: 120px 0;
+
+  background: var(--color-navy-dark);
+  color: var(--color-white);
+
+  overflow: hidden;
+}
+
+.section::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  top: -250px;
+  right: -150px;
+
+  border-radius: 50%;
+
+  background: rgba(212, 175, 55, 0.08);
+
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+}
+
+/* LINES */
+
+.topLine,
+.bottomLine {
+  width: 100%;
+  height: 1px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  transform-origin: left;
+}
+
+.topLine {
+  margin-bottom: 70px;
+}
+
+.bottomLine {
+  margin-top: 70px;
+}
+
+/* CONTENT */
+
+.content {
+  max-width: 1000px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-bottom: 30px;
+
+  color: rgba(255, 255, 255, 0.5);
+
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.label span {
+  width: 34px;
+  height: 1px;
+
+  background: var(--color-gold);
+}
+
+.content h2 {
+  max-width: 900px;
+
+  font-size: clamp(48px, 6vw, 86px);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 0.98;
+}
+
+.content h2 span {
+  display: block;
+
+  color: var(--color-gold);
+}
+
+.content p {
+  max-width: 650px;
+
+  margin-top: 30px;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* ACTIONS */
+
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  margin-top: 38px;
+}
+
+.primaryButton,
+.secondaryButton {
+  min-height: 52px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 0 22px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition:
+    transform var(--transition-fast),
+    background var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.primaryButton {
+  background: var(--color-gold);
+  color: var(--color-navy);
+}
+
+.primaryButton:hover {
+  background: var(--color-gold-light);
+  transform: translateY(-2px);
+}
+
+.primaryButton svg {
+  font-size: 18px;
+
+  transition: transform var(--transition-fast);
+}
+
+.primaryButton:hover svg {
+  transform: translate(2px, -2px);
+}
+
+.secondaryButton {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  color: var(--color-white);
+}
+
+.secondaryButton:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
+  .section {
+    padding: 90px 0;
+  }
+
+  .topLine {
+    margin-bottom: 55px;
+  }
+
+  .bottomLine {
+    margin-top: 55px;
+  }
+
+  .content h2 {
+    font-size: clamp(44px, 10vw, 68px);
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+  .section {
+    padding: 75px 0;
+  }
+
+  .topLine {
+    margin-bottom: 45px;
+  }
+
+  .bottomLine {
+    margin-top: 50px;
+  }
+
+  .content h2 {
+    font-size: clamp(38px, 11vw, 54px);
+  }
+
+  .content p {
+    margin-top: 24px;
+    font-size: 15px;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+
+    margin-top: 30px;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+}
