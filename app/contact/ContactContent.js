@@ -152,7 +152,7 @@ export default function ContactContent() {
               </a>
 
               <a
-                href="mailto:contact@hightouch.tn"
+                href="mailto:comhightouch@gmail.com"
                 className={styles.secondaryButton}
               >
                 Nous écrire
@@ -242,7 +242,7 @@ export default function ContactContent() {
 
             <div className={styles.contactDetails}>
               <motion.a
-                href="mailto:contact@hightouch.tn"
+                href="mailto:comhightouch@gmail.com"
                 className={styles.contactItem}
                 variants={fadeUp}
               >
@@ -252,7 +252,7 @@ export default function ContactContent() {
 
                 <span>
                   <small>EMAIL</small>
-                  <strong>contact@hightouch.tn</strong>
+                  <strong>comhightouch@gmail.com</strong>
                 </span>
 
                 <FiArrowUpRight

@@ -100,9 +100,9 @@ export default function Footer() {
                 <span>52 643 319</span>
               </a>
 
-              <a href="mailto:contact@highttouch.tn">
+              <a href="mailto:comhightouch@gmail.com">
                 <FiMail aria-hidden="true" />
-                <span>contact@hightouch.tn</span>
+                <span>comhightouch@gmail.com</span>
               </a>
 
               <div className={styles.address}>

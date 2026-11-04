@@ -76,7 +76,7 @@ const organizationSchema = {
   "@type": "Organization",
   name: "High Touch",
   url: "https://hightouch.tn",
-  email: "contact@hightouch.tn",
+  email: "comhightouch@gmail.com",
   telephone: "+21626605686",
 };
 

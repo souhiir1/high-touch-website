@@ -3,7 +3,7 @@ import AboutPreview from "./components/AboutPreview/AboutPreview";
 import ServicesPreview from "./components/ServicesPreview/ServicesPreview";
 import RealisationsPreview from "./components/RealisationsPreview/RealisationsPreview";
 import ContactPreview from "./components/ContactPreview/ContactPreview";
-
+import ClientsStrip from "./components/ClientsStrip/ClientsStrip";
 export const metadata = {
   title: "Agence de Communication & Marketing Digital en Tunisie",
 
@@ -33,7 +33,7 @@ const organizationSchema = {
     "Agence de communication et marketing digital spécialisée en stratégie digitale, social media, branding, création de contenu, photo, vidéo et media buying.",
   url: "https://hightouch.tn",
   telephone: "+21626605686",
-  email: "contact@highttouch.tn",
+  email: "comhightouch@gmail.com",
   areaServed: {
     "@type": "Country",
     name: "Tunisie",
@@ -60,6 +60,7 @@ export default function Home() {
       />
 
       <Hero />
+      <ClientsStrip/>
       <AboutPreview />
       <ServicesPreview />
       <RealisationsPreview />
