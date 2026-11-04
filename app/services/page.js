@@ -1,31 +1,20 @@
+
 import ServicesContent from "./ServicesContent";
 
 export const metadata = {
-  title: "Services | Communication, Marketing Digital & Social Media",
+  title: "Nos Services | Agence Marketing Digital & Communication Tunisie",
 
   description:
-    "Découvrez les services de High Touch en Tunisie : stratégie digitale, marketing digital, social media, image de marque, création de contenu, photo & vidéo, sponsoring et media buying.",
-
-  keywords: [
-    "agence communication Tunisie",
-    "marketing digital Tunisie",
-    "social media Tunisie",
-    "image de marque Tunisie",
-    "sponsoring Tunisie",
-    "media buying Tunisie",
-    "création contenu Tunisie",
-    "photo vidéo Tunisie",
-    "stratégie digitale Tunisie",
-  ],
+    "High Touch accompagne les entreprises en Tunisie : marketing digital, sponsoring, social media, branding, photographie professionnelle, vidéo et création de contenu.",
 
   alternates: {
     canonical: "https://hightouch.tn/services",
   },
 
   openGraph: {
-    title: "Nos Services | High Touch",
+    title: "Services Marketing Digital & Communication | High Touch",
     description:
-      "Stratégie digitale, marketing digital, branding, social media, image de marque, sponsoring, création de contenu et media buying.",
+      "Découvrez nos solutions en marketing digital, sponsoring, social media, branding, photographie, vidéo et création de contenu en Tunisie.",
     url: "https://hightouch.tn/services",
     siteName: "High Touch",
     locale: "fr_TN",

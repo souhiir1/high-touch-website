@@ -221,6 +221,29 @@
   background: var(--color-white);
 }
 
+.serviceLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 28px;
+  color: var(--color-gold);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    gap 0.3s ease,
+    color 0.3s ease;
+}
+
+.serviceLink:hover {
+  gap: 15px;
+  color: var(--color-gold-light);
+}
+
+.serviceLink svg {
+  font-size: 18px;
+}
+
 .servicesContainer {
   display: grid;
   gap: 100px;

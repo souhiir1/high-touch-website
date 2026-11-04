@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -10,185 +11,195 @@ const services = [
   {
     number: "01",
     title: "Stratégie Digitale",
+    slug: "/services/strategie-digitale",
     description:
-      "Une stratégie claire pour structurer votre présence digitale et aligner votre communication avec vos objectifs business.",
+      "High Touch accompagne les entreprises partout en Tunisie dans la définition de leur stratégie digitale. Nous analysons votre présence en ligne, identifions vos opportunités et construisons un plan de communication adapté à votre marché, votre audience et vos objectifs commerciaux.",
     details: [
       "Audit de votre présence digitale",
-      "Définition des objectifs",
-      "Positionnement et stratégie de communication",
+      "Définition des objectifs et du positionnement",
+      "Stratégie de communication digitale",
       "Plan d'action et recommandations",
     ],
     image: "/strategie.jpg",
-    alt: "Stratégie digitale et communication marketing",
+    alt: "Stratégie digitale et conseil en communication pour les entreprises en Tunisie",
   },
   {
     number: "02",
     title: "Social Media",
+    slug: "/services/social-media",
     description:
-      "Nous construisons une présence régulière, cohérente et engageante sur les réseaux sociaux.",
+      "Développez votre présence sur les réseaux sociaux avec une stratégie social media adaptée à votre marque. High Touch accompagne les entreprises tunisiennes dans la gestion de leurs réseaux sociaux, la création de publications et le développement d'une communauté engagée.",
     details: [
-      "Calendrier éditorial",
-      "Création et planification des publications",
-      "Animation des réseaux sociaux",
-      "Reels, carrousels, posts et stories",
+      "Gestion des réseaux sociaux",
+      "Calendrier éditorial et planification",
+      "Création de posts, Reels, stories et carrousels",
+      "Animation et suivi des communautés",
     ],
     image: "/social-media.jpg",
-    alt: "Gestion des réseaux sociaux et social media",
+    alt: "Gestion des réseaux sociaux et stratégie social media en Tunisie",
   },
   {
     number: "03",
     title: "Content & Design",
+    slug: "/services/creation-contenu",
     description:
-      "Des contenus visuels et éditoriaux pensés pour attirer l'attention, renforcer votre image et engager votre audience.",
+      "Attirez l'attention grâce à la création de contenu visuel et éditorial adapté à votre identité. Nous concevons des visuels, publications et contenus créatifs pour renforcer votre image de marque et valoriser votre communication digitale.",
     details: [
-      "Création de contenus",
-      "Design de publications",
-      "Copywriting",
-      "Formats adaptés aux réseaux sociaux et campagnes",
+      "Création de contenu pour les marques",
+      "Design graphique et publications",
+      "Copywriting et rédaction de contenu",
+      "Création de formats pour les campagnes digitales",
     ],
     image: "/content-design.jpg",
-    alt: "Création de contenu et design pour les marques",
+    alt: "Création de contenu digital et design graphique pour les marques",
   },
   {
     number: "04",
     title: "Branding",
+    slug: "/services/branding",
     description:
-      "Nous créons une identité cohérente et reconnaissable pour professionnaliser votre image de marque.",
+      "Construisez une identité de marque forte et reconnaissable. High Touch accompagne les entreprises en Tunisie dans leur stratégie de branding, la création d'identité visuelle et la définition d'une direction artistique cohérente avec leur positionnement.",
     details: [
-      "Identité visuelle",
+      "Création d'identité visuelle",
+      "Logo et univers graphique",
       "Direction artistique",
-      "Templates de communication",
-      "Cohérence de l'image de marque",
+      "Templates et supports de communication",
     ],
     image: "/branding.jpg",
-    alt: "Branding et image de marque",
+    alt: "Branding et création d'identité visuelle pour les entreprises en Tunisie",
   },
   {
     number: "05",
     title: "Photo & Vidéo",
+    slug: "/services/photo-video",
     description:
-      "Des productions visuelles conçues pour donner vie à votre communication et mettre votre marque en valeur.",
+      "Valorisez votre marque avec des shootings photo professionnels et des productions vidéo en Tunisie. Nous réalisons des contenus visuels pour les entreprises, les marques, les événements et les professionnels : photographie publicitaire, portraits, vidéos promotionnelles et formats courts pour les réseaux sociaux.",
     details: [
-      "Shooting photo",
-      "Production vidéo",
-      "Formats courts",
-      "Reels, Stories, Posts et campagnes",
+      "Shooting photo professionnel",
+      "Photographie de produits et de marques",
+      "Production vidéo et vidéos promotionnelles",
+      "Reels, stories et contenus audiovisuels",
     ],
     image: "/photo-video.jpg",
-    alt: "Production photo et vidéo pour la communication",
+    alt: "Shooting photo professionnel et production vidéo pour les marques en Tunisie",
   },
   {
     number: "06",
-    title: "Media Buying",
+    title: "Media Buying & Sponsoring",
+    slug: "/services/sponsoring",
     description:
-      "Des campagnes publicitaires pilotées par les données afin d'améliorer progressivement les performances.",
+      "Développez votre visibilité grâce à des campagnes publicitaires digitales ciblées. High Touch accompagne les marques dans la mise en place, le suivi et l'optimisation de campagnes sponsorisées sur les plateformes adaptées à leurs objectifs.",
     details: [
-      "Mise en place de campagnes",
-      "Meta Ads",
-      "Suivi des KPI",
-      "Tests et optimisation",
+      "Stratégie de publicité digitale",
+      "Campagnes Meta Ads et sponsoring",
+      "Suivi des budgets et des indicateurs KPI",
+      "Analyse et optimisation des campagnes",
     ],
     image: "/media-buying.jpg",
-    alt: "Media buying et campagnes publicitaires digitales",
+    alt: "Sponsoring et campagnes publicitaires digitales Meta Ads en Tunisie",
   },
 ];
 
 export default function Services() {
   return (
     <main>
-     <section className={styles.hero}>
-  <div className={styles.heroGlow}></div>
-  <div className={styles.heroGlowSecondary}></div>
+      {/* HERO */}
+      <section className={styles.hero}>
+        <div className={styles.heroGlow}></div>
+        <div className={styles.heroGlowSecondary}></div>
 
-  <motion.div
-    className={styles.heroOrb}
-    animate={{
-      y: [0, -20, 0],
-      rotate: [0, 8, 0],
-    }}
-    transition={{
-      duration: 7,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
-  />
+        <motion.div
+          className={styles.heroOrb}
+          animate={{
+            y: [0, -20, 0],
+            rotate: [0, 8, 0],
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
 
-  <motion.div
-    className={styles.heroLine}
-    initial={{ scaleX: 0, opacity: 0 }}
-    animate={{ scaleX: 1, opacity: 1 }}
-    transition={{ duration: 1.2, delay: 0.3 }}
-  />
+        <motion.div
+          className={styles.heroLine}
+          initial={{ scaleX: 0, opacity: 0 }}
+          animate={{ scaleX: 1, opacity: 1 }}
+          transition={{ duration: 1.2, delay: 0.3 }}
+        />
 
-  <div className={`${styles.heroInner} container`}>
-    <motion.div
-      className={styles.heroContent}
-      initial={{ opacity: 0, y: 40 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.9, ease: "easeOut" }}
-    >
-      <motion.div
-        className={styles.label}
-        initial={{ opacity: 0, y: 15 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.2 }}
-      >
-        <span></span>
-        NOS EXPERTISES
-        <span></span>
-      </motion.div>
+        <div className={`${styles.heroInner} container`}>
+          <motion.div
+            className={styles.heroContent}
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.9, ease: "easeOut" }}
+          >
+            <motion.div
+              className={styles.label}
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <span></span>
+              NOS EXPERTISES
+              <span></span>
+            </motion.div>
 
-      <h1>
-        <motion.span
-          className={styles.heroTitleLine}
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.35 }}
+            <h1>
+              <motion.span
+                className={styles.heroTitleLine}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.35 }}
+              >
+                Agence de communication
+              </motion.span>
+
+              <motion.span
+                className={styles.heroTitleLine}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
+              >
+                & marketing digital
+              </motion.span>
+
+              <motion.span
+                className={`${styles.heroTitleLine} ${styles.heroGold}`}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.65 }}
+              >
+                en Tunisie.
+              </motion.span>
+            </h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.85 }}
+            >
+              High Touch accompagne les entreprises et les marques partout
+              en Tunisie à travers des solutions de marketing digital,
+              sponsoring, gestion des réseaux sociaux, branding,
+              photographie professionnelle et production vidéo.
+            </motion.p>
+          </motion.div>
+        </div>
+
+        <motion.div
+          className={styles.heroScroll}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.4, duration: 0.6 }}
         >
-          Des solutions
-        </motion.span>
+          <span>SCROLL</span>
+          <div></div>
+        </motion.div>
+      </section>
 
-        <motion.span
-          className={styles.heroTitleLine}
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-          pensées
-        </motion.span>
-
-        <motion.span
-          className={`${styles.heroTitleLine} ${styles.heroGold}`}
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.65 }}
-        >
-          pour votre croissance.
-        </motion.span>
-      </h1>
-
-      <motion.p
-        initial={{ opacity: 0, y: 25 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.85 }}
-      >
-        De la stratégie à la performance, High Touch accompagne votre marque
-        dans chaque étape de sa communication digitale.
-      </motion.p>
-    </motion.div>
-  </div>
-
-  <motion.div
-    className={styles.heroScroll}
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ delay: 1.4, duration: 0.6 }}
-  >
-    <span>SCROLL</span>
-    <div></div>
-  </motion.div>
-</section>
-
+      {/* SERVICES */}
       <section className={styles.servicesSection}>
         <div className={`${styles.servicesContainer} container`}>
           <div className={styles.intro}>
@@ -219,9 +230,11 @@ export default function Services() {
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.7, delay: 0.1 }}
             >
-              Notre approche combine stratégie, création, production,
-              diffusion et optimisation pour construire une communication
-              cohérente, visible et orientée business.
+              De la stratégie à la création, en passant par le sponsoring
+              et la production audiovisuelle, nous réunissons les expertises
+              nécessaires pour développer votre visibilité et renforcer
+              votre image de marque. Nos services sont accessibles aux
+              entreprises et aux professionnels partout en Tunisie.
             </motion.p>
           </div>
 
@@ -252,7 +265,6 @@ export default function Services() {
                     <span className={styles.number}>
                       {service.number}
                     </span>
-
                     <span className={styles.serviceLine}></span>
                   </div>
 
@@ -267,6 +279,15 @@ export default function Services() {
                       <li key={detail}>{detail}</li>
                     ))}
                   </ul>
+
+                  {/* <Link
+                    href={service.slug}
+                    className={styles.serviceLink}
+                    aria-label={`Découvrir nos services : ${service.title}`}
+                  >
+                    Découvrir ce service
+                    <FiArrowUpRight aria-hidden="true" />
+                  </Link> */}
                 </div>
 
                 <div className={styles.serviceArrow}>
@@ -278,6 +299,7 @@ export default function Services() {
         </div>
       </section>
 
+      {/* METHOD */}
       <section className={styles.methodSection}>
         <div className={`${styles.methodContainer} container`}>
           <div className={styles.methodHeader}>
@@ -326,6 +348,7 @@ export default function Services() {
         </div>
       </section>
 
+      {/* CTA */}
       <section className={styles.ctaSection}>
         <div className={`${styles.ctaContainer} container`}>
           <motion.div
@@ -347,7 +370,7 @@ export default function Services() {
 
             <p>
               Échangeons sur vos objectifs et construisons ensemble une
-              communication adaptée à votre marque.
+              communication adaptée à votre marque, partout en Tunisie.
             </p>
 
             <Link href="/contact" className={styles.ctaButton}>
