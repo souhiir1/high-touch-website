@@ -31,14 +31,14 @@ const projects = [
     description:
       "Couverture visuelle d'événements et création de contenus destinés à valoriser les moments forts.",
     images: [
-      "/realisations/jci/jci-01.jpg",
-      "/realisations/jci/jci-02.jpg",
-      "/realisations/jci/jci-03.jpg",
-      "/realisations/jci/jci-04.jpg",
-      "/realisations/jci/jci-05.jpg",
-      "/realisations/jci/jci-06.jpg",
-      "/realisations/jci/jci-07.jpg",
-      "/realisations/jci/jci-08.jpg",
+      "/realisations/jci/jci-01.webp",
+      "/realisations/jci/jci-02.webp",
+      "/realisations/jci/jci-03.webp",
+      "/realisations/jci/jci-04.webp",
+      // "/realisations/jci/jci-05.jpg",
+      // "/realisations/jci/jci-06.jpg",
+      // "/realisations/jci/jci-07.jpg",
+      // "/realisations/jci/jci-08.jpg",
     ],
   },
   {
@@ -49,10 +49,10 @@ const projects = [
     description:
       "Photographie beauté et mise en valeur des détails, des textures et de l'expression.",
     images: [
-      "/realisations/beaute/photo-03.jpg",
-      "/realisations/beaute/photo-04.jpg",
-      "/realisations/beaute/photo-01.jpg",
-      "/realisations/beaute/photo-02.jpg",
+      "/realisations/beaute/photo-03.webp",
+      "/realisations/beaute/photo-04.webp",
+      "/realisations/beaute/photo-01.webp",
+      "/realisations/beaute/photo-02.webp",
       
       // "/realisations/shooting/beaute/photo-05.jpg",
       // "/realisations/shooting/beaute/photo-06.jpg",
@@ -66,16 +66,16 @@ const projects = [
     description:
       "Portraits et séances personnelles avec une approche photographique soignée.",
     images: [
-      "/realisations/shooting-personnel/photo-01.jpg",
-      "/realisations/shooting-personnel/photo-02.jpg",
-      "/realisations/shooting-personnel/photo-03.jpg",
-      "/realisations/shooting-personnel/photo-04.jpg",
-      "/realisations/shooting-personnel/photo-05.jpg",
-      "/realisations/shooting-personnel/photo-06.jpg",
-      "/realisations/shooting-personnel/photo-07.jpg",
-      "/realisations/shooting-personnel/photo-08.jpg",
-      "/realisations/shooting-personnel/photo-09.jpg",
-       "/realisations/shooting-personnel/photo-010.jpg",
+      "/realisations/shooting-personnel/photo-01.webp",
+      "/realisations/shooting-personnel/photo-02.webp",
+      "/realisations/shooting-personnel/photo-03.webp",
+      "/realisations/shooting-personnel/photo-04.webp",
+      "/realisations/shooting-personnel/photo-05.webp",
+      "/realisations/shooting-personnel/photo-06.webp",
+      "/realisations/shooting-personnel/photo-07.webp",
+      "/realisations/shooting-personnel/photo-08.webp",
+      "/realisations/shooting-personnel/photo-09.webp",
+       "/realisations/shooting-personnel/photo-010.webp",
     ],
   },
   {
@@ -102,10 +102,10 @@ const projects = [
     description:
       "Création de contenus photo pour présenter les pièces, l'univers et l'identité visuelle de la marque.",
     images: [
-      "/realisations/vetements/photo-01.jpg",
-      "/realisations/vetements/photo-02.jpg",
-      "/realisations/vetements/photo-03.jpg",
-      "/realisations/vetements/photo-04.jpg",
+      "/realisations/vetements/photo-01.webp",
+      "/realisations/vetements/photo-02.webp",
+      "/realisations/vetements/photo-03.webp",
+      "/realisations/vetements/photo-04.webp",
     ],
   },
   {
@@ -116,9 +116,9 @@ const projects = [
     description:
       "Shooting mode pensé pour mettre en avant les tenues et leur univers visuel.",
     images: [
-      "/realisations/ali-mode/photo-01.jpg",
-      "/realisations/ali-mode/photo-02.jpg",
-      "/realisations/ali-mode/photo-03.jpg",
+      "/realisations/ali-mode/photo-01.webp",
+      "/realisations/ali-mode/photo-02.webp",
+      "/realisations/ali-mode/photo-03.webp",
     ],
   },
   {
