@@ -1,3 +1,4 @@
+
 .footer {
   background: var(--color-navy);
   color: var(--color-white);
@@ -77,6 +78,41 @@
   font-size: 14px;
   line-height: 1.8;
 }
+
+/* SOCIAL MEDIA */
+
+.socialLinks {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.socialLinks a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 38px;
+  height: 38px;
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+
+  color: var(--color-gold);
+  font-size: 16px;
+
+  transition: all var(--transition-fast);
+}
+
+.socialLinks a:hover {
+  background: var(--color-gold);
+  color: var(--color-navy);
+  border-color: var(--color-gold);
+  transform: translateY(-3px);
+}
+
+/* PROJECT LINK */
 
 .projectLink {
   display: inline-flex;

@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import {
   FiArrowUpRight,
@@ -5,9 +6,15 @@ import {
   FiPhone,
   FiMapPin,
 } from "react-icons/fi";
-import { FaWhatsapp } from "react-icons/fa";
+import {
+  FaWhatsapp,
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa";
 import styles from "./Footer.module.css";
 import Image from "next/image";
+
 const navigation = [
   { name: "Accueil", href: "/" },
   { name: "À propos", href: "/a-propos" },
@@ -30,16 +37,18 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={`${styles.container} container`}>
         <div className={styles.main}>
+
+          {/* BRAND */}
           <div className={styles.brand}>
             <Link href="/" className={styles.logo}>
-           <Image
-            src="/hightouchlogo.png"
-            alt="High Touch"
-            width={50}
-            height={60}
-            priority
-            className={styles.logoImage}
-          />
+              <Image
+                src="/hightouchlogo.png"
+                alt="High Touch"
+                width={50}
+                height={60}
+                priority
+                className={styles.logoImage}
+              />
 
               <span className={styles.logoText}>
                 <strong>HIGH TOUCH</strong>
@@ -52,12 +61,43 @@ export default function Footer() {
               communication cohérent, visible et orienté business.
             </p>
 
+            {/* SOCIAL MEDIA */}
+            <div className={styles.socialLinks}>
+              <a
+                href="https://www.facebook.com/profile.php?id=61551942516433"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Facebook"
+              >
+                <FaFacebookF />
+              </a>
+
+              <a
+                href="https://www.instagram.com/hightouch2026/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <FaInstagram />
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/high-touch-6593923a6/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedinIn />
+              </a>
+            </div>
+
             <Link href="/contact" className={styles.projectLink}>
               Démarrer un projet
               <FiArrowUpRight aria-hidden="true" />
             </Link>
           </div>
 
+          {/* NAVIGATION */}
           <div className={styles.column}>
             <h2>Navigation</h2>
 
@@ -70,6 +110,7 @@ export default function Footer() {
             </nav>
           </div>
 
+          {/* SERVICES */}
           <div className={styles.column}>
             <h2>Expertises</h2>
 
@@ -82,6 +123,7 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* CONTACT */}
           <div className={styles.column}>
             <h2>Contact</h2>
 
@@ -111,14 +153,18 @@ export default function Footer() {
               </div>
             </div>
           </div>
+
         </div>
 
+        {/* BOTTOM */}
         <div className={styles.bottom}>
           <p>
             © 2026 High Touch. Tous droits réservés.
           </p>
 
-          <span>STRATÉGIE • CRÉATION • PRODUCTION • PERFORMANCE</span>
+          <span>
+            STRATÉGIE • CRÉATION • PRODUCTION • PERFORMANCE
+          </span>
         </div>
       </div>
     </footer>

@@ -195,7 +195,10 @@ const projects = [
     type: "mixed",
     description:
       "Création de contenus photo et vidéo pour présenter l'univers et l'expérience du lieu.",
-    images: ["/realisations/zanzibar/photo-01.png"],
+    images: ["/realisations/zanzibar/photo-01.png",
+      "/realisations/zanzibar/photo-02.png",
+      // "/realisations/zanzibar/photo-03.png"
+    ],
     videos: [
       "/realisations/zanzibar/video-01.mp4",
       "/realisations/zanzibar/video-02.mp4",

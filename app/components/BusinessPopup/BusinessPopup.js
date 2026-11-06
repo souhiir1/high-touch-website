@@ -28,7 +28,7 @@ export default function BusinessPopup() {
 
   // Show after 5 seconds on every page load.
   useEffect(() => {
-    const timer = setTimeout(() => setIsOpen(true), 5000);
+    const timer = setTimeout(() => setIsOpen(true), 2000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -38,7 +38,7 @@ export default function BusinessPopup() {
 
     const interval = setInterval(() => {
       setActiveClient((current) => (current + 1) % clients.length);
-    }, 5000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, [isOpen]);
