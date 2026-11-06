@@ -29,7 +29,11 @@ export const metadata = {
     "High Touch accompagne les entreprises dans leur stratégie digitale, leur communication, leur image de marque et leur croissance.",
 
   applicationName: "High Touch",
-
+icons: {
+  icon: "/hightouchlogo.png",
+  shortcut: "/hightouchlogo.png",
+  apple: "/hightouchlogo.png",
+},
   keywords: [
     "High Touch",
     "agence communication Tunisie",

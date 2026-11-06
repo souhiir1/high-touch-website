@@ -1,515 +1,397 @@
+
 .overlay {
   position: fixed;
   inset: 0;
-  z-index: 2000;
-
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  padding: 24px;
-
-  background: rgba(3, 10, 17, 0.78);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  animation: overlayIn 0.4s ease forwards;
+  padding: 20px;
+  background: rgba(8, 13, 29, 0.76);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
 }
-
-/* =========================
-   POPUP
-========================= */
 
 .popup {
   position: relative;
-
-  width: min(100%, 650px);
-
+  width: 100%;
+  max-width: 620px;
+  padding: 27px;
   overflow: hidden;
-
-  padding: 46px 52px 42px;
-
-  background:
-    radial-gradient(
-      circle at 85% 10%,
-      rgba(212, 175, 55, 0.13),
-      transparent 30%
-    ),
-    linear-gradient(
-      145deg,
-      rgb(17, 34, 51),
-      rgb(8, 20, 32)
-    );
-
-  border: 1px solid rgba(212, 175, 55, 0.35);
-
-  box-shadow:
-    0 30px 80px rgba(0, 0, 0, 0.5),
-    0 0 50px rgba(212, 175, 55, 0.08);
-
-  color: var(--color-white);
-
-  animation: popupIn 0.65s cubic-bezier(0.22, 1, 0.36, 1)
-    forwards;
+  background: #101a35;
+  border: 1px solid rgba(207, 171, 103, 0.4);
+  border-radius: 17px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.4);
+  color: #fff;
 }
 
-/* =========================
-   GLOW
-========================= */
-
-.glowOne {
+.popup::before {
+  content: "";
   position: absolute;
-
-  width: 220px;
-  height: 220px;
-
   top: -120px;
-  right: -80px;
-
+  right: -100px;
+  width: 240px;
+  height: 240px;
   border-radius: 50%;
-
-  background: rgba(212, 175, 55, 0.18);
-
-  filter: blur(60px);
-
-  animation: glowPulse 4s ease-in-out infinite;
-}
-
-.glowTwo {
-  position: absolute;
-
-  width: 180px;
-  height: 180px;
-
-  bottom: -120px;
-  left: -100px;
-
-  border-radius: 50%;
-
-  background: rgba(212, 175, 55, 0.08);
-
+  background: rgba(207, 171, 103, 0.1);
   filter: blur(55px);
+  pointer-events: none;
 }
-
-/* =========================
-   CLOSE
-========================= */
 
 .closeButton {
   position: absolute;
-
-  top: 18px;
-  right: 18px;
-
-  width: 38px;
-  height: 38px;
-
+  top: 13px;
+  right: 13px;
+  z-index: 5;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 50%;
-
-  color: rgba(255, 255, 255, 0.7);
-
-  transition:
-    background 0.25s ease,
-    color 0.25s ease,
-    transform 0.25s ease;
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .closeButton:hover {
-  background: rgba(212, 175, 55, 0.15);
-  color: var(--color-gold);
-  transform: rotate(90deg);
+  background: #cfab67;
+  color: #101a35;
 }
 
-.closeButton svg {
-  width: 18px;
-  height: 18px;
-}
-
-/* =========================
-   TOP LINE
-========================= */
-
-.topLine {
+.header {
   position: relative;
-  z-index: 2;
-
-  display: flex;
-  align-items: center;
-  gap: 12px;
-
-  margin-bottom: 28px;
-
-  color: var(--color-gold);
-
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 0.25em;
-}
-
-.line {
-  width: 28px;
-  height: 1px;
-
-  background: var(--color-gold);
-  opacity: 0.6;
-}
-
-/* =========================
-   CONTENT
-========================= */
-
-.content {
-  position: relative;
-  z-index: 2;
+  margin-bottom: 20px;
+  padding-right: 30px;
 }
 
 .eyebrow {
-  display: block;
-
-  margin-bottom: 13px;
-
-  color: rgba(255, 255, 255, 0.5);
-
+  display: inline-block;
+  margin-bottom: 9px;
+  color: #cfab67;
   font-size: 10px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
+  font-weight: 700;
+  letter-spacing: 3px;
 }
 
-.content h2 {
-  margin-bottom: 20px;
-
-  font-size: clamp(36px, 5vw, 58px);
+.header h2 {
+  max-width: 500px;
+  margin: 0;
+  color: #fff;
+  font-size: 20px;
   font-weight: 600;
-  line-height: 0.98;
-  letter-spacing: -0.04em;
+  line-height: 1.4;
+  letter-spacing: -0.4px;
 }
 
-.content h2 span {
-  color: var(--color-gold);
-
-  text-shadow:
-    0 0 20px rgba(212, 175, 55, 0.2);
+.header h2 span {
+  color: rgba(255, 255, 255, 0.68);
+  font-weight: 400;
 }
 
-.mainText {
-  margin-bottom: 8px;
+/* PHONE COMPARISON */
 
-  color: var(--color-white);
-
-  font-size: 19px;
-  font-weight: 500;
-}
-
-.description {
-  max-width: 520px;
-
-  margin-bottom: 25px;
-
-  color: rgba(255, 255, 255, 0.66);
-
-  font-size: 14px;
-  line-height: 1.8;
-}
-
-.description strong {
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 500;
-}
-
-/* =========================
-   SERVICES
-========================= */
-
-.services {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-
-  margin-bottom: 30px;
-}
-
-.services span {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-
-  padding: 8px 12px;
-
-  border: 1px solid rgba(212, 175, 55, 0.18);
-  border-radius: 2px;
-
-  background: rgba(255, 255, 255, 0.035);
-
-  color: rgba(255, 255, 255, 0.65);
-
-  font-size: 10px;
-  letter-spacing: 0.04em;
-
-  transition:
-    border-color 0.25s ease,
-    background 0.25s ease,
-    color 0.25s ease;
-}
-
-.services span:hover {
-  border-color: rgba(212, 175, 55, 0.5);
-  background: rgba(212, 175, 55, 0.07);
-  color: var(--color-gold);
-}
-
-.services svg {
-  color: var(--color-gold);
-  font-size: 12px;
-}
-
-/* =========================
-   CTA
-========================= */
-
-.cta {
-  position: relative;
-
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-
-  min-height: 52px;
-
-  padding: 0 8px 0 22px;
-
-  background: var(--color-gold);
-  color: var(--color-navy);
-
-  font-size: 13px;
-  font-weight: 650;
-
-  overflow: hidden;
-
-  box-shadow:
-    0 10px 30px rgba(212, 175, 55, 0.14);
-
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.cta::before {
-  content: "";
-
-  position: absolute;
-  top: 0;
-  left: -120%;
-
-  width: 80%;
-  height: 100%;
-
-  background: linear-gradient(
-    105deg,
-    transparent,
-    rgba(255, 255, 255, 0.5),
-    transparent
-  );
-
-  transform: skewX(-20deg);
-
-  transition: left 0.6s ease;
-}
-
-.cta:hover::before {
-  left: 140%;
-}
-
-.cta:hover {
-  transform: translateY(-2px);
-
-  background: var(--color-gold-light);
-
-  box-shadow:
-    0 14px 38px rgba(212, 175, 55, 0.2);
-}
-
-.cta > span {
-  position: relative;
-  z-index: 1;
-}
-
-.ctaIcon {
-  width: 36px;
-  height: 36px;
-
+.phones {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  border-radius: 50%;
-
-  background: var(--color-navy);
-  color: var(--color-gold);
-
-  transition:
-    transform 0.3s ease,
-    background 0.3s ease;
+  gap: 25px;
 }
 
-.cta:hover .ctaIcon {
-  transform: rotate(5deg) scale(1.05);
-  background: var(--color-white);
+.phoneColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  flex: 1;
+  min-width: 0;
 }
 
-.ctaIcon svg {
-  width: 16px;
-  height: 16px;
-
-  transition: transform 0.3s ease;
-}
-
-.cta:hover .ctaIcon svg {
-  transform: translate(2px, -2px);
-}
-
-.bottomText {
-  margin-top: 14px;
-
-  color: rgba(255, 255, 255, 0.38);
-
+.imageLabel,
+.imageLabelAfter {
+  color: rgba(255, 255, 255, 0.7);
   font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
-/* =========================
-   DECORATIVE CORNER
-========================= */
+.imageLabelAfter {
+  color: #cfab67;
+}
 
-.cornerShape {
+.phone {
+  position: relative;
+  width: 100%;
+  max-width: 205px;
+  padding: 5px;
+  border-radius: 26px;
+  background: linear-gradient(145deg, #596071, #171c29 35%, #30384b 70%, #101522);
+  box-shadow:
+    0 12px 25px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.phoneFrame {
+  position: relative;
+  padding: 5px;
+  border-radius: 22px;
+  background: #080c15;
+}
+
+.phoneScreen {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border-radius: 17px;
+  background: #fff;
+}
+
+.phoneImage {
+  object-fit: contain;
+}
+
+.phoneNotch {
   position: absolute;
-
-  right: -50px;
-  bottom: -50px;
-
-  width: 130px;
-  height: 130px;
-
-  border: 1px solid rgba(212, 175, 55, 0.12);
-  border-radius: 50%;
+  z-index: 2;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34%;
+  height: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 10px 10px;
+  background: #080c15;
 }
 
-.cornerShape::after {
-  content: "";
+.phoneNotch span {
+  width: 22px;
+  height: 3px;
+  border-radius: 5px;
+  background: #343b48;
+}
 
+.phoneSideButton {
   position: absolute;
-  inset: 20px;
-
-  border: 1px solid rgba(212, 175, 55, 0.1);
-  border-radius: 50%;
+  top: 65px;
+  right: -3px;
+  width: 3px;
+  height: 34px;
+  border-radius: 0 3px 3px 0;
+  background: #727b8b;
 }
 
-/* =========================
-   ANIMATIONS
-========================= */
-
-@keyframes overlayIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+.phoneDivider {
+  width: 2px;
+  height: 170px;
+  border-radius: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #cfab67 15%,
+    #cfab67 85%,
+    transparent
+  );
 }
 
-@keyframes popupIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px) scale(0.96);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+.projectFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
 }
 
-@keyframes glowPulse {
-  0%,
-  100% {
-    opacity: 0.7;
-    transform: scale(1);
-  }
-
-  50% {
-    opacity: 1;
-    transform: scale(1.15);
-  }
+.clientName {
+  color: #e5c68f;
+  font-size: 13px;
+  font-weight: 600;
 }
 
-/* =========================
-   MOBILE
-========================= */
+.indicators {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.indicator,
+.activeIndicator {
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.activeIndicator {
+  width: 19px;
+  background: #cfab67;
+}
+
+/* ACTION BUTTONS */
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 19px;
+}
+
+.workButton,
+.contactButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 34px;
+  padding: 0 13px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.workButton {
+  background: #cfab67;
+  color: #101a35;
+}
+
+.workButton svg {
+  font-size: 14px;
+}
+
+.workButton:hover {
+  background: #e3c58e;
+  transform: translateY(-2px);
+}
+
+.contactButton {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: #fff;
+}
+
+.contactButton:hover {
+  border-color: #cfab67;
+  color: #e5c68f;
+}
+
+/* MOBILE */
 
 @media (max-width: 600px) {
   .overlay {
-    padding: 16px;
+    padding: 13px;
   }
 
   .popup {
-    padding: 38px 25px 30px;
+    max-width: 440px;
+    padding: 22px 16px;
   }
 
-  .closeButton {
-    top: 13px;
-    right: 13px;
+  .header {
+    margin-bottom: 17px;
+    padding-right: 22px;
   }
 
-  .topLine {
-    margin-bottom: 22px;
-  }
-
-  .content h2 {
-    font-size: 39px;
-  }
-
-  .mainText {
+  .header h2 {
     font-size: 17px;
   }
 
-  .description {
-    font-size: 13px;
-  }
-
-  .services {
-    margin-bottom: 25px;
-  }
-
-  .services span {
+  .eyebrow {
     font-size: 9px;
-    padding: 7px 9px;
   }
 
-  .cta {
-    width: 100%;
-    justify-content: space-between;
+  .phones {
+    gap: 13px;
+  }
+
+  .phone {
+    max-width: 165px;
+    padding: 4px;
+    border-radius: 21px;
+  }
+
+  .phoneFrame {
+    padding: 4px;
+    border-radius: 18px;
+  }
+
+  .phoneScreen {
+    border-radius: 14px;
+  }
+
+  .phoneDivider {
+    height: 130px;
+  }
+
+  .phoneNotch {
+    height: 9px;
+  }
+
+  .phoneSideButton {
+    top: 50px;
+    height: 27px;
+  }
+
+  .projectFooter {
+    margin-top: 11px;
+  }
+
+  .actions {
+    margin-top: 16px;
   }
 }
 
-/* =========================
-   REDUCED MOTION
-========================= */
-
-@media (prefers-reduced-motion: reduce) {
-  .overlay,
-  .popup,
-  .glowOne {
-    animation: none;
+@media (max-width: 360px) {
+  .popup {
+    padding: 19px 12px;
   }
 
-  .cta,
+  .header h2 {
+    font-size: 15px;
+  }
+
+  .phones {
+    gap: 9px;
+  }
+
+  .phone {
+    padding: 3px;
+    border-radius: 17px;
+  }
+
+  .phoneFrame {
+    padding: 3px;
+    border-radius: 15px;
+  }
+
+  .phoneScreen {
+    border-radius: 12px;
+  }
+
+  .phoneDivider {
+    height: 105px;
+  }
+
+  .workButton,
+  .contactButton {
+    min-height: 31px;
+    padding: 0 9px;
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
   .closeButton,
-  .services span {
+  .workButton,
+  .contactButton {
     transition: none;
   }
 }

@@ -1,128 +1,208 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 import { FiArrowUpRight, FiX } from "react-icons/fi";
-import { FaInstagram, FaFacebookF } from "react-icons/fa";
 import styles from "./BusinessPopup.module.css";
+
+const clients = [
+  {
+    id: "flora",
+    name: "Flora Beach Park",
+    before: "/realisations/content-design/flora-beach-avant.jpeg",
+    after: "/realisations/content-design/flora-beach-apres.jpeg",
+  },
+  {
+    id: "ranch",
+    name: "Ranch Yasmine",
+    before: "/realisations/content-design/ranch-yasmine-avant.jpeg",
+    after: "/realisations/content-design/ranch-yasmine-apres.jpeg",
+  },
+];
 
 export default function BusinessPopup() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeClient, setActiveClient] = useState(0);
 
+  // Show after 5 seconds on every page load.
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsOpen(true);
-    }, 1200);
-
+    const timer = setTimeout(() => setIsOpen(true), 5000);
     return () => clearTimeout(timer);
   }, []);
 
+  // Automatically switch clients.
   useEffect(() => {
     if (!isOpen) return;
 
+    const interval = setInterval(() => {
+      setActiveClient((current) => (current + 1) % clients.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [isOpen]);
+
+  // Close with Escape and lock background scrolling.
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+
     const handleEscape = (event) => {
-      if (event.key === "Escape") {
-        setIsOpen(false);
-      }
+      if (event.key === "Escape") setIsOpen(false);
     };
 
+    document.body.style.overflow = "hidden";
     document.addEventListener("keydown", handleEscape);
 
-    document.body.style.overflow = "hidden";
-
     return () => {
+      document.body.style.overflow = previousOverflow;
       document.removeEventListener("keydown", handleEscape);
-      document.body.style.overflow = "";
     };
   }, [isOpen]);
 
-  if (!isOpen) return null;
+  const client = clients[activeClient];
 
   return (
-    <div className={styles.overlay} onClick={() => setIsOpen(false)}>
-      <div
-        className={styles.popup}
-        onClick={(event) => event.stopPropagation()}
-      >
-        {/* Decorative glow */}
-        <div className={styles.glowOne} />
-        <div className={styles.glowTwo} />
-
-        {/* Close */}
-        <button
-          type="button"
-          className={styles.closeButton}
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          className={styles.overlay}
           onClick={() => setIsOpen(false)}
-          aria-label="Fermer"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
         >
-          <FiX aria-hidden="true" />
-        </button>
-
-        {/* Top label */}
-        <div className={styles.topLine}>
-          <span className={styles.line} />
-          <span>HIGH TOUCH</span>
-          <span className={styles.line} />
-        </div>
-
-        {/* Main content */}
-        <div className={styles.content}>
-          <span className={styles.eyebrow}>
-            VOTRE BUSINESS MÉRITE PLUS
-          </span>
-
-          <h2>
-            Business
-            <br />
-            <span>متاعك</span> يستاهل أكثر.
-          </h2>
-
-          <p className={styles.mainText}>
-            ما تخليش الناس تعدّي قدامك وما تعرفكش.
-          </p>
-
-          <p className={styles.description}>
-          متاعك على السوشيل ميديا présenceخلّي ال
-           <br/>
-           business تخدم عليك وتخلّي الناس تشوف، تعرف وتثق في الـ 
-            متاعك.
-          </p>
-
-          {/* Services */}
-          <div className={styles.services}>
-            <span>
-              <FaInstagram aria-hidden="true" />
-              Social Media
-            </span>
-
-            <span>Branding</span>
-
-            <span>Content</span>
-
-            <span>🎯 Sponsoring</span>
-          </div>
-
-          {/* CTA */}
-          <Link
-            href="/contact"
-            className={styles.cta}
-            onClick={() => setIsOpen(false)}
+          <motion.div
+            className={styles.popup}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Découvrez quelques projets High Touch"
+            initial={{ opacity: 0, y: 25, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 15, scale: 0.98 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            onClick={(event) => event.stopPropagation()}
           >
-            <span>خلّينا نبدأو</span>
+            <button
+              type="button"
+              className={styles.closeButton}
+              onClick={() => setIsOpen(false)}
+              aria-label="Fermer"
+            >
+              <FiX />
+            </button>
 
-            <span className={styles.ctaIcon}>
-              <FiArrowUpRight aria-hidden="true" />
-            </span>
-          </Link>
+            <div className={styles.header}>
+              <span className={styles.eyebrow}>HIGH TOUCH</span>
+              <h2>
+                Ils nous ont fait confiance.
+                <span> Découvrez ce que nous avons créé ensemble.</span>
+              </h2>
+            </div>
 
-          <p className={styles.bottomText}>
-           نحكيو على أول خطوة؟
-          </p>
-        </div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={client.id}
+                className={styles.project}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.4 }}
+              >
+                <div className={styles.phones}>
+                  {/* BEFORE PHONE */}
+                  <div className={styles.phoneColumn}>
+                    <span className={styles.imageLabel}>AVANT</span>
 
-        {/* Decorative corner */}
-        <div className={styles.cornerShape} />
-      </div>
-    </div>
+                    <div className={styles.phone}>
+                      <div className={styles.phoneSideButton} />
+                      <div className={styles.phoneFrame}>
+                        <div className={styles.phoneScreen}>
+                          <div className={styles.phoneNotch}>
+                            <span />
+                          </div>
+
+                          <Image
+                            src={client.before}
+                            alt={`${client.name} - Avant`}
+                            fill
+                            sizes="(max-width: 600px) 38vw, 230px"
+                            className={styles.phoneImage}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className={styles.phoneDivider} />
+
+                  {/* AFTER PHONE */}
+                  <div className={styles.phoneColumn}>
+                    <span className={styles.imageLabelAfter}>APRÈS</span>
+
+                    <div className={styles.phone}>
+                      <div className={styles.phoneSideButton} />
+                      <div className={styles.phoneFrame}>
+                        <div className={styles.phoneScreen}>
+                          <div className={styles.phoneNotch}>
+                            <span />
+                          </div>
+
+                          <Image
+                            src={client.after}
+                            alt={`${client.name} - Après`}
+                            fill
+                            sizes="(max-width: 600px) 38vw, 230px"
+                            className={styles.phoneImage}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className={styles.projectFooter}>
+                  <span className={styles.clientName}>{client.name}</span>
+
+                  <div className={styles.indicators}>
+                    {clients.map((item, index) => (
+                      <span
+                        key={item.id}
+                        className={
+                          index === activeClient
+                            ? styles.activeIndicator
+                            : styles.indicator
+                        }
+                      />
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+
+            <div className={styles.actions}>
+              <Link
+                href="/realisations"
+                className={styles.workButton}
+                onClick={() => setIsOpen(false)}
+              >
+                Voir notre travail <FiArrowUpRight />
+              </Link>
+
+              <Link
+                href="/contact"
+                className={styles.contactButton}
+                onClick={() => setIsOpen(false)}
+              >
+                Nous contacter
+              </Link>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }

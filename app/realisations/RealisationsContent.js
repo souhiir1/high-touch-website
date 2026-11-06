@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from "react";
@@ -15,13 +16,79 @@ import styles from "./page.module.css";
 
 const filters = [
   "Tous",
+  "Content Design",
+  "Sponsoring",
   "Événementiel",
-  "Photo",
+  "Photo & Vidéo",
   "Mode",
-  "Reels & Vidéo",
 ];
 
 const projects = [
+  // CONTENT DESIGN — AVANT / APRÈS
+  {
+    id: "flora-park-content",
+    title: "Flora Beach Park",
+    category: "Content Design",
+    categories: ["Content Design", "Événementiel", "Photo & Vidéo"],
+    type: "beforeAfter",
+    description:
+      "Refonte du feed et création de contenus visuels pour renforcer la cohérence de l'identité de Flora Beach Park.",
+    beforeImage: "/realisations/content-design/flora-beach-avant.jpeg",
+    afterImage: "/realisations/content-design/flora-beach-apres.jpeg",
+    beforeLabel: "Feed avant",
+    afterLabel: "Feed après",
+  },
+  {
+    id: "ranch-yasmine-content",
+    title: "Ranch Yasmine",
+    category: "Content Design",
+    type: "beforeAfter",
+    description:
+      "Organisation du feed et création de contenus pour présenter les activités, l'expérience et l'univers du ranch.",
+    beforeImage: "/realisations/content-design/ranch-yasmine-avant.jpeg",
+    afterImage: "/realisations/content-design/ranch-yasmine-apres.jpeg",
+    beforeLabel: "Feed avant",
+    afterLabel: "Feed après",
+  },
+  {
+    id: "elan-saphir-content",
+    title: "Élan Saphir Spa",
+    category: "Content Design",
+    type: "beforeAfter",
+    description:
+      "Création de visuels et harmonisation du feed pour valoriser les prestations et l'univers du spa.",
+    afterImage: "/realisations/content-design/elan-saphir-apres.jpeg",
+    afterLabel: "Feed réalisé",
+  },
+
+  // SPONSORING & MEDIA BUYING
+  {
+    id: "campagnes-sponsoring",
+    title: "Sponsoring & Media Buying",
+    category: "Sponsoring",
+    type: "campaign",
+    description:
+      "Extraits de campagnes sponsorisées et suivi des performances : portée, impressions, visites et audience. Client : Élan Saphir Spa.",
+    platform: "Meta Ads · Facebook & Instagram",
+    objective: "Objectif de campagne à préciser",
+    // period: "Période à compléter",
+    metrics: [
+     { label: "Personnes touchées", value: "+16K" },
+  { label: "Vues", value: "+59K" },
+  // { label: "Impressions", value: "N/D" },
+  // { label: "Visites de page", value: "N/D" },
+  // { label: "Interactions", value: "N/D" },
+    ],
+    screenshots: [
+      "/realisations/sponsoring/statistiques-01.png",
+      "/realisations/sponsoring/statistiques-02.png",
+      "/realisations/sponsoring/statistiques-03.png",
+      "/realisations/sponsoring/statistiques-04.png",
+      "/realisations/sponsoring/statistiques-05.png",
+    ],
+  },
+
+  // ÉVÉNEMENTIEL
   {
     id: "jci",
     title: "JCI Events",
@@ -35,16 +102,46 @@ const projects = [
       "/realisations/jci/jci-02.webp",
       "/realisations/jci/jci-03.webp",
       "/realisations/jci/jci-04.webp",
-      // "/realisations/jci/jci-05.jpg",
-      // "/realisations/jci/jci-06.jpg",
-      // "/realisations/jci/jci-07.jpg",
-      // "/realisations/jci/jci-08.jpg",
     ],
   },
   {
+    id: "zedni-center",
+    title: "Zedni Center",
+    category: "Événementiel",
+    type: "mixed",
+    featured: true,
+    description:
+      "Couverture de l'événement SIT Connect et création de contenus promotionnels pour Zedni Center.",
+    images: [
+      "/realisations/zedni-center/photo-01.jpg",
+      "/realisations/zedni-center/cover.png",
+    ],
+    videos: [
+      "/realisations/zedni-center/video.mp4",
+      "/realisations/zedni-center/reel-01.mp4",
+    ],
+  },
+  {
+    id: "orange-event",
+    title: "Orange Event",
+    category: "Événementiel",
+    type: "mixed",
+    description:
+      "Couverture photo et vidéo mettant en valeur l'ambiance et les moments de l'événement.",
+    images: [
+      "/realisations/orange-event/photo-01.jpeg",
+      "/realisations/orange-event/photo-02.jpeg",
+      "/realisations/orange-event/photo-03.jpeg",
+      "/realisations/orange-event/photo-04.jpeg",
+    ],
+    videos: ["/realisations/orange-event/video.mp4"],
+  },
+
+  // PHOTO & VIDÉO
+  {
     id: "shooting-beaute",
     title: "Shooting professionnel — Beauté",
-    category: "Photo",
+    category: "Photo & Vidéo",
     type: "galleryCarousel",
     description:
       "Photographie beauté et mise en valeur des détails, des textures et de l'expression.",
@@ -53,15 +150,12 @@ const projects = [
       "/realisations/beaute/photo-04.webp",
       "/realisations/beaute/photo-01.webp",
       "/realisations/beaute/photo-02.webp",
-      
-      // "/realisations/shooting/beaute/photo-05.jpg",
-      // "/realisations/shooting/beaute/photo-06.jpg",
     ],
   },
   {
     id: "shooting-personnel",
     title: "Shooting professionnel — Personnel",
-    category: "Photo",
+    category: "Photo & Vidéo",
     type: "galleryCarousel",
     description:
       "Portraits et séances personnelles avec une approche photographique soignée.",
@@ -75,13 +169,13 @@ const projects = [
       "/realisations/shooting-personnel/photo-07.webp",
       "/realisations/shooting-personnel/photo-08.webp",
       "/realisations/shooting-personnel/photo-09.webp",
-       "/realisations/shooting-personnel/photo-010.webp",
+      "/realisations/shooting-personnel/photo-010.webp",
     ],
   },
   {
     id: "shooting-mariage",
     title: "Shooting professionnel — Mariage",
-    category: "Photo",
+    category: "Photo & Vidéo",
     type: "galleryCarousel",
     description:
       "Des images qui capturent les instants, les émotions et les détails d'une journée unique.",
@@ -94,6 +188,41 @@ const projects = [
       "/realisations/mariage/photo-06.jpg",
     ],
   },
+  {
+    id: "zanzibar",
+    title: "Zanzibar Lounge & More",
+    category: "Photo & Vidéo",
+    type: "mixed",
+    description:
+      "Création de contenus photo et vidéo pour présenter l'univers et l'expérience du lieu.",
+    images: ["/realisations/zanzibar/photo-01.png"],
+    videos: [
+      "/realisations/zanzibar/video-01.mp4",
+      "/realisations/zanzibar/video-02.mp4",
+      "/realisations/zanzibar/video-03.mp4",
+    ],
+  },
+  {
+    id: "flora-park",
+    title: "Flora Beach Park — Photo & Vidéo",
+    category: "Photo & Vidéo",
+    categories: ["Photo & Vidéo", "Événementiel", "Content Design"],
+    type: "mixed",
+    description:
+      "Contenus photo et vidéo pour valoriser le lieu et ses moments forts.",
+    images: [
+      "/realisations/flora-park/photo-01.jpg",
+      "/realisations/flora-park/photo-02.jpg",
+      "/realisations/flora-park/photo-03.jpg",
+      "/realisations/flora-park/photo-04.jpg",
+    ],
+    videos: [
+      "/realisations/flora-park/video.mp4",
+      "/realisations/flora-park/video2.mp4",
+    ],
+  },
+
+  // MODE
   {
     id: "vetements",
     title: "Marque de vêtements",
@@ -121,94 +250,22 @@ const projects = [
       "/realisations/ali-mode/photo-03.webp",
     ],
   },
-  {
-    id: "zedni-center",
-    title: "Zedni Center",
-    category: "Événementiel",
-    type: "mixed",
-    featured: true,
-    description:
-      "Couverture de l'événement SIT Connect et création de contenus promotionnels pour Zedni Center.",
-    images: [
-      "/realisations/zedni-center/photo-01.jpg",
-       "/realisations/zedni-center/cover.png",
-    ],
-    videos: [
-      "/realisations/zedni-center/video.mp4",
-      "/realisations/zedni-center/reel-01.mp4",
-    ],
-  },
-  {
-    id: "orange-event",
-    title: "Orange Event",
-    category: "Événementiel",
-    type: "mixed",
-    description:
-      "Couverture photo et vidéo mettant en valeur l'ambiance et les moments de l'événement.",
-    images: [
-      "/realisations/orange-event/photo-01.jpeg",
-      "/realisations/orange-event/photo-02.jpeg",
-      "/realisations/orange-event/photo-03.jpeg",
-      "/realisations/orange-event/photo-04.jpeg",
-    ],
-    videos: [
-      "/realisations/orange-event/video.mp4",
-    ],
-  },
-  {
-    id: "zanzibar",
-    title: "Zanzibar Lounge & More",
-    category: "Reels & Vidéo",
-    type: "mixed",
-    description:
-      "Création de contenus photo et vidéo pour présenter l'univers et l'expérience du lieu.",
-    images: [
-      "/realisations/zanzibar/photo-01.png",
-    ],
-    videos: [
-      "/realisations/zanzibar/video-01.mp4",
-      "/realisations/zanzibar/video-02.mp4",
-      "/realisations/zanzibar/video-03.mp4",
-    ],
-  },
+
+  // REELS
   {
     id: "spa-mirage",
-    title: "Jumana spa",
-    category: "Reels & Vidéo",
+    title: "Jumana Spa",
+    category: "Photo & Vidéo",
     type: "reels",
     description:
       "Contenu vidéo dédié à la mise en valeur de l'expérience et de l'univers du spa.",
-    videos: [
-      "/realisations/spa-mirage/reel-01.mp4",
-    ],
-     posters: [
-      "/realisations/spa-mirage/reel-01-cover.png",
-    
-    ],
-  },
-  {
-    id: "flora-park",
-    title: "Flora Park",
-    category: "Événementiel",
-    type: "mixed",
-    description:
-      "Contenus photo et vidéo pour valoriser le lieu et ses moments forts.",
-    images: [
-      "/realisations/flora-park/photo-01.jpg",
-      "/realisations/flora-park/photo-02.jpg",
-      "/realisations/flora-park/photo-03.jpg",
-      "/realisations/flora-park/photo-04.jpg",
-    ],
-    videos: [
-      "/realisations/flora-park/video.mp4",
-       "/realisations/flora-park/video2.mp4",
-    ],
-   
+    videos: ["/realisations/spa-mirage/reel-01.mp4"],
+    posters: ["/realisations/spa-mirage/reel-01-cover.png"],
   },
   {
     id: "mit",
     title: "MIT — Institut de Tunisie",
-    category: "Reels & Vidéo",
+    category: "Photo & Vidéo",
     type: "reels",
     description:
       "Création de formats publicitaires courts pensés pour les réseaux sociaux.",
@@ -232,7 +289,9 @@ export default function RealisationsContent() {
     activeFilter === "Tous"
       ? projects
       : projects.filter(
-          (project) => project.category === activeFilter
+          (project) =>
+            project.category === activeFilter ||
+            project.categories?.includes(activeFilter)
         );
 
   const openPhoto = (src, alt) => {
@@ -241,18 +300,14 @@ export default function RealisationsContent() {
 
   return (
     <main>
-      {/* ================= HERO ================= */}
-
+      {/* HERO */}
       <section className={styles.hero}>
         <div className={styles.heroGlow}></div>
         <div className={styles.heroGlowSecondary}></div>
 
         <motion.div
           className={styles.heroOrb}
-          animate={{
-            y: [0, -18, 0],
-            rotate: [0, 8, 0],
-          }}
+          animate={{ y: [0, -18, 0], rotate: [0, 8, 0] }}
           transition={{
             duration: 8,
             repeat: Infinity,
@@ -288,23 +343,22 @@ export default function RealisationsContent() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.45 }}
             >
-              Découvrez une sélection de projets, shootings,
-              événements et contenus créés pour donner de la
-              visibilité aux marques et à leurs univers.
+              Découvrez nos projets en content design, social media,
+              sponsoring, production photo & vidéo et événementiel,
+              imaginés pour développer la visibilité des marques.
             </motion.p>
           </motion.div>
         </div>
 
         <div className={styles.heroBottom}>
-          <span>PHOTO</span>
-          <span>VIDÉO</span>
+          <span>CONTENT DESIGN</span>
+          <span>SPONSORING</span>
+          <span>PHOTO & VIDÉO</span>
           <span>ÉVÉNEMENTIEL</span>
-          <span>CONTENT</span>
         </div>
       </section>
 
-      {/* ================= INTRO + FILTERS ================= */}
-
+      {/* INTRO + FILTERS */}
       <section className={styles.portfolioSection}>
         <div className={`${styles.portfolioContainer} container`}>
           <div className={styles.portfolioHeader}>
@@ -349,9 +403,7 @@ export default function RealisationsContent() {
                 key={filter}
                 type="button"
                 className={
-                  activeFilter === filter
-                    ? styles.activeFilter
-                    : ""
+                  activeFilter === filter ? styles.activeFilter : ""
                 }
                 onClick={() => setActiveFilter(filter)}
               >
@@ -359,8 +411,6 @@ export default function RealisationsContent() {
               </button>
             ))}
           </div>
-
-          {/* ================= PROJECTS ================= */}
 
           <motion.div layout className={styles.projects}>
             <AnimatePresence mode="popLayout">
@@ -378,8 +428,7 @@ export default function RealisationsContent() {
         </div>
       </section>
 
-      {/* ================= CTA ================= */}
-
+      {/* CTA */}
       <section className={styles.ctaSection}>
         <div className={`${styles.ctaContainer} container`}>
           <motion.div
@@ -413,8 +462,7 @@ export default function RealisationsContent() {
         </div>
       </section>
 
-      {/* ================= PHOTO PREVIEW ================= */}
-
+      {/* PHOTO PREVIEW */}
       <AnimatePresence>
         {activePhoto && (
           <motion.div
@@ -441,17 +489,13 @@ export default function RealisationsContent() {
                 <FiX />
               </button>
 
-              <img
-                src={activePhoto.src}
-                alt={activePhoto.alt}
-              />
+              <img src={activePhoto.src} alt={activePhoto.alt} />
             </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* ================= VIDEO MODAL ================= */}
-
+      {/* VIDEO MODAL */}
       <AnimatePresence>
         {activeVideo && (
           <motion.div
@@ -493,14 +537,8 @@ export default function RealisationsContent() {
   );
 }
 
-/* ================= PROJECT CARD ================= */
-
-function Project({
-  project,
-  index,
-  onVideoOpen,
-  onPhotoOpen,
-}) {
+/* PROJECT CARD */
+function Project({ project, index, onVideoOpen, onPhotoOpen }) {
   return (
     <motion.article
       layout
@@ -536,17 +574,11 @@ function Project({
       </p>
 
       {project.type === "gallery" && (
-        <Gallery
-          project={project}
-          onPhotoOpen={onPhotoOpen}
-        />
+        <Gallery project={project} onPhotoOpen={onPhotoOpen} />
       )}
 
       {project.type === "galleryCarousel" && (
-        <GalleryCarousel
-          project={project}
-          onPhotoOpen={onPhotoOpen}
-        />
+        <GalleryCarousel project={project} onPhotoOpen={onPhotoOpen} />
       )}
 
       {project.type === "mixed" && (
@@ -564,12 +596,132 @@ function Project({
           onPhotoOpen={onPhotoOpen}
         />
       )}
+
+      {project.type === "beforeAfter" && (
+        <BeforeAfter project={project} />
+      )}
+
+      {project.type === "campaign" && (
+        <CampaignResults
+          project={project}
+          onPhotoOpen={onPhotoOpen}
+        />
+      )}
     </motion.article>
   );
 }
 
-/* ================= NORMAL PHOTO GALLERY ================= */
+/* CONTENT DESIGN — BEFORE / AFTER */
+function BeforeAfter({ project }) {
+  const images = [
+    ...(project.beforeImage
+      ? [
+          {
+            label: project.beforeLabel || "Avant",
+            path: project.beforeImage,
+          },
+        ]
+      : []),
+    ...(project.afterImage
+      ? [
+          {
+            label: project.afterLabel || "Après",
+            path: project.afterImage,
+          },
+        ]
+      : []),
+  ];
 
+  return (
+    <div className={styles.beforeAfterGrid}>
+      {images.map((item) => (
+        <div className={styles.beforeAfterItem} key={item.label}>
+          <div className={styles.phoneMockup}>
+            <div className={styles.phoneSideButton}></div>
+
+            <div className={styles.phoneFrame}>
+              <div className={styles.phoneNotch}>
+                <span></span>
+              </div>
+
+              <div className={styles.phoneScreen}>
+                <div className={styles.phoneInstagramBar}>
+                  <span>Instagram</span>
+                  <span>•••</span>
+                </div>
+
+                <img
+                  src={item.path}
+                  alt={`${project.title} — ${item.label}`}
+                  className={styles.feedImage}
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+
+          <span className={styles.beforeAfterLabel}>
+            {item.label}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/* SPONSORING / MEDIA BUYING */
+function CampaignResults({ project, onPhotoOpen }) {
+  return (
+    <div className={styles.campaignResults}>
+      <div className={styles.campaignMeta}>
+        <span>{project.platform}</span>
+        {/* <span>{project.period}</span> */}
+      </div>
+
+      <p className={styles.campaignObjective}>
+        {project.objective}
+      </p>
+
+      <div className={styles.campaignMetrics}>
+        {project.metrics.map((metric) => (
+          <div className={styles.campaignMetric} key={metric.label}>
+            <strong>{metric.value}</strong>
+            <span>{metric.label}</span>
+          </div>
+        ))}
+      </div>
+
+      <div className={styles.campaignScreenshots}>
+        {project.screenshots.map((path, index) => (
+          <button
+            type="button"
+            className={styles.campaignScreenshot}
+            key={path}
+            onClick={() =>
+              onPhotoOpen(
+                path,
+                `Statistiques de campagne — capture ${index + 1}`
+              )
+            }
+            aria-label={`Agrandir la statistique ${index + 1}`}
+          >
+            <img
+              src={path}
+              alt={`Statistiques de sponsoring — capture ${index + 1}`}
+              loading="lazy"
+            />
+
+            <span>
+              Statistique {String(index + 1).padStart(2, "0")}
+            </span>
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+/* NORMAL PHOTO GALLERY */
 function Gallery({ project, onPhotoOpen }) {
   return (
     <div
@@ -578,7 +730,9 @@ function Gallery({ project, onPhotoOpen }) {
       }`}
     >
       {project.images.map((image, index) => {
-        const alt = `${project.title} - réalisation High Touch ${index + 1}`;
+        const alt = `${project.title} - réalisation High Touch ${
+          index + 1
+        }`;
 
         return (
           <button
@@ -586,7 +740,9 @@ function Gallery({ project, onPhotoOpen }) {
             className={styles.galleryImage}
             key={`${project.id}-${index}`}
             onClick={() => onPhotoOpen(image, alt)}
-            aria-label={`Agrandir la photo ${index + 1} de ${project.title}`}
+            aria-label={`Agrandir la photo ${index + 1} de ${
+              project.title
+            }`}
           >
             <img src={image} alt={alt} />
 
@@ -600,8 +756,7 @@ function Gallery({ project, onPhotoOpen }) {
   );
 }
 
-/* ================= SHOOTING CAROUSEL ================= */
-
+/* SHOOTING CAROUSEL */
 function GalleryCarousel({ project, onPhotoOpen }) {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -667,13 +822,8 @@ function GalleryCarousel({ project, onPhotoOpen }) {
   );
 }
 
-/* ================= PHOTO + VIDEO PROJECT ================= */
-
-function MixedProject({
-  project,
-  onVideoOpen,
-  onPhotoOpen,
-}) {
+/* PHOTO + VIDEO PROJECT */
+function MixedProject({ project, onVideoOpen, onPhotoOpen }) {
   const videos =
     project.videos || (project.video ? [project.video] : []);
 
@@ -690,7 +840,9 @@ function MixedProject({
               `${project.title} - photo ${index + 1}`
             )
           }
-          aria-label={`Agrandir la photo ${index + 1} de ${project.title}`}
+          aria-label={`Agrandir la photo ${index + 1} de ${
+            project.title
+          }`}
         >
           <img
             src={image}
@@ -726,13 +878,8 @@ function MixedProject({
   );
 }
 
-/* ================= REELS ================= */
-
-function Reels({
-  project,
-  onVideoOpen,
-  onPhotoOpen,
-}) {
+/* REELS */
+function Reels({ project, onVideoOpen, onPhotoOpen }) {
   return (
     <div className={styles.reelsGrid}>
       {project.videos.map((video, index) => {
@@ -754,7 +901,9 @@ function Reels({
                   event.stopPropagation();
                   onPhotoOpen(
                     poster,
-                    `${project.title} - couverture du Reel ${index + 1}`
+                    `${project.title} - couverture du Reel ${
+                      index + 1
+                    }`
                   );
                 }}
               />
