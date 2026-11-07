@@ -1,4 +1,6 @@
+
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import Navbar from "./components/Navbar/Navbar";
 import WhatsAppButton from "./components/WhatsAppButton/WhatsAppButton";
 import Footer from "./components/Footer/Footer";
@@ -16,7 +18,6 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
   display: "swap",
 });
-
 
 export const metadata = {
   metadataBase: new URL("https://hightouch.tn"),
@@ -58,7 +59,7 @@ export const metadata = {
     "design",
     "photoshoot",
     "shooting",
-    "marketing"
+    "marketing",
   ],
 
   authors: [{ name: "High Touch" }],
@@ -114,7 +115,6 @@ const websiteSchema = {
   inLanguage: "fr-TN",
 };
 
-
 export default function RootLayout({ children }) {
   return (
     <html
@@ -122,12 +122,27 @@ export default function RootLayout({ children }) {
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
       <body>
+        {/* Google Tag Manager */}
+        <Script
+          id="google-tag-manager"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-P6W4GRNG');
+            `,
+          }}
+        />
+
         <Navbar />
- <BusinessPopup />
+        <BusinessPopup />
+
         {children}
 
         <WhatsAppButton />
-
         <Footer />
 
         <script
