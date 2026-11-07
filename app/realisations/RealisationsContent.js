@@ -50,6 +50,18 @@ const projects = [
     beforeLabel: "Feed avant",
     afterLabel: "Feed après",
   },
+    {
+    id: "zanzibarlounge",
+    title: "Zanzibar lounge and more",
+    category: "Content Design",
+    type: "beforeAfter",
+    description:
+      "Refonte visuelle du feed Instagram à travers une sélection de visuels harmonieux mettant en valeur les prestations, les moments forts et l'identité du Zanzibar lounge.",
+    beforeImage: "/realisations/content-design/zanzibar-avant.jpeg",
+    afterImage: "/realisations/content-design/zanzibar-apres.jpeg",
+    beforeLabel: "Feed avant",
+    afterLabel: "Feed après",
+  },
   {
     id: "elan-saphir-content",
     title: "Élan Saphir Spa",

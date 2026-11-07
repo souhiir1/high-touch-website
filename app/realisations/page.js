@@ -1,12 +1,16 @@
 import RealisationsContent from "./RealisationsContent";
 
+
 export const metadata = {
-  title: "Réalisations | Projets, Événements, Photo & Vidéo",
+  title: "Réalisations | High Touch – Projets & Productions en Tunisie",
+
   description:
-    "Découvrez les réalisations de High Touch en Tunisie : événements, shootings photo, mode, création de contenu, Reels, vidéos publicitaires et communication digitale.",
+    "Découvrez les réalisations de High Touch (HighTouch), agence de communication en Tunisie : événements, shootings photo, mode, création de contenu, Reels, vidéos publicitaires et campagnes de communication digitale.",
 
   keywords: [
     "réalisations High Touch",
+    "HighTouch Tunisie",
+    "projets HighTouch",
     "agence communication Tunisie",
     "production photo Tunisie",
     "production vidéo Tunisie",
@@ -23,9 +27,9 @@ export const metadata = {
   },
 
   openGraph: {
-    title: "Réalisations | High Touch",
+    title: "Réalisations | High Touch – Nos Projets en Tunisie",
     description:
-      "Événements, shootings, mode, Reels et productions visuelles : découvrez une sélection de réalisations High Touch.",
+      "Découvrez les projets de High Touch (HighTouch) : événements, shootings photo, mode, Reels, vidéos publicitaires et créations visuelles pour les marques en Tunisie.",
     url: "https://hightouch.tn/realisations",
     siteName: "High Touch",
     locale: "fr_TN",

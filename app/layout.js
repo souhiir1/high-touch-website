@@ -17,25 +17,32 @@ const geistMono = Geist_Mono({
   display: "swap",
 });
 
+
 export const metadata = {
   metadataBase: new URL("https://hightouch.tn"),
 
   title: {
-    default: "High Touch | Agence de Communication & Marketing Digital",
+    default: "High Touch (HighTouch) | Agence de Communication & Marketing Digital",
     template: "%s | High Touch",
   },
 
   description:
-    "High Touch accompagne les entreprises dans leur stratégie digitale, leur communication, leur image de marque et leur croissance.",
+    "High Touch (HighTouch) est une agence de communication et de marketing digital en Tunisie. Nous accompagnons les marques en stratégie digitale, branding, social media, sponsoring et création de contenu.",
 
   applicationName: "High Touch",
-icons: {
-  icon: "/hightouchlogo.png",
-  shortcut: "/hightouchlogo.png",
-  apple: "/hightouchlogo.png",
-},
+
+  icons: {
+    icon: "/hightouchlogo.png",
+    shortcut: "/hightouchlogo.png",
+    apple: "/hightouchlogo.png",
+  },
+
   keywords: [
     "High Touch",
+    "HighTouch",
+    "HighTouch Tunisie",
+    "High Touch Tunisie",
+    "hightouch.tn",
     "agence communication Tunisie",
     "agence marketing digital Tunisie",
     "marketing digital",
@@ -47,6 +54,11 @@ icons: {
     "création de contenu",
     "photo vidéo",
     "media buying",
+    "design graphique",
+    "design",
+    "photoshoot",
+    "shooting",
+    "marketing"
   ],
 
   authors: [{ name: "High Touch" }],
@@ -59,19 +71,27 @@ icons: {
     telephone: false,
   },
 
+  alternates: {
+    canonical: "https://hightouch.tn",
+  },
+
   openGraph: {
     type: "website",
     locale: "fr_TN",
     siteName: "High Touch",
-    title: "High Touch | Agence de Communication & Marketing Digital",
+    title: "High Touch (HighTouch) | Agence de Communication & Marketing Digital",
     description:
-      "Stratégie, création, production et performance au service de votre marque.",
+      "High Touch, agence de communication et de marketing digital en Tunisie. Stratégie, création, production et performance au service de votre marque.",
     url: "https://hightouch.tn",
   },
 
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 };
 
@@ -79,6 +99,7 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "High Touch",
+  alternateName: ["HighTouch", "HighTouch Tunisie"],
   url: "https://hightouch.tn",
   email: "comhightouch@gmail.com",
   telephone: "+21626605686",
@@ -88,9 +109,11 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "High Touch",
+  alternateName: "HighTouch",
   url: "https://hightouch.tn",
   inLanguage: "fr-TN",
 };
+
 
 export default function RootLayout({ children }) {
   return (

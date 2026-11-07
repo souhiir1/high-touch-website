@@ -20,6 +20,12 @@ const clients = [
     before: "/realisations/content-design/ranch-yasmine-avant.jpeg",
     after: "/realisations/content-design/ranch-yasmine-apres.jpeg",
   },
+   {
+    id: "zanzibar",
+    name: "Zanzibar lounge and more",
+    before: "/realisations/content-design/zanzibar-avant.jpeg",
+    after: "/realisations/content-design/zanzibar-apres.jpeg",
+  },
 ];
 
 export default function BusinessPopup() {

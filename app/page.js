@@ -4,11 +4,12 @@ import ServicesPreview from "./components/ServicesPreview/ServicesPreview";
 import RealisationsPreview from "./components/RealisationsPreview/RealisationsPreview";
 import ContactPreview from "./components/ContactPreview/ContactPreview";
 import ClientsStrip from "./components/ClientsStrip/ClientsStrip";
+
 export const metadata = {
-  title: "Agence de Communication & Marketing Digital en Tunisie",
+  title: "High Touch | Agence de Communication & Marketing Digital en Tunisie",
 
   description:
-    "High Touch est une agence de communication et marketing digital en Tunisie spécialisée en stratégie digitale, social media, branding, création de contenu, photo, vidéo et media buying.",
+    "High Touch (HighTouch) accompagne les entreprises en Tunisie avec des solutions de communication, marketing digital, social media, branding, création de contenu, photo, vidéo et media buying.",
 
   alternates: {
     canonical: "https://hightouch.tn/",
@@ -17,7 +18,7 @@ export const metadata = {
   openGraph: {
     title: "High Touch | Agence de Communication & Marketing Digital",
     description:
-      "Stratégie, création, production et performance au service de votre marque.",
+      "Découvrez High Touch, votre agence de communication et marketing digital en Tunisie : stratégie, création, production et performance.",
     url: "https://hightouch.tn/",
     siteName: "High Touch",
     locale: "fr_TN",
@@ -25,12 +26,14 @@ export const metadata = {
   },
 };
 
+
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "High Touch",
+  alternateName: ["HighTouch", "HighTouch Tunisie"],
   description:
-    "Agence de communication et marketing digital spécialisée en stratégie digitale, social media, branding, création de contenu, photo, vidéo et media buying.",
+    "Agence de communication et marketing digital en Tunisie spécialisée en stratégie digitale, social media, branding, création de contenu, photo, vidéo et media buying.",
   url: "https://hightouch.tn",
   telephone: "+21626605686",
   email: "comhightouch@gmail.com",
@@ -45,9 +48,15 @@ const organizationSchema = {
     "Branding",
     "Photo & Vidéo",
     "Media Buying",
-    "Marketing digital"
+    "Marketing digital",
+    "Sponsoring",
+    "Marketing",
+    "Design",
+    "Photoshoot",
+    "Shooting"
   ],
 };
+
 
 export default function Home() {
   return (
