@@ -85,7 +85,7 @@ export default function BusinessPopup() {
             className={styles.popup}
             role="dialog"
             aria-modal="true"
-            aria-label="Découvrez quelques projets High Touch"
+            aria-label="Découvrez quelques projets HighTouch"
             initial={{ opacity: 0, y: 25, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 15, scale: 0.98 }}
@@ -102,7 +102,7 @@ export default function BusinessPopup() {
             </button>
 
             <div className={styles.header}>
-              <span className={styles.eyebrow}>HIGH TOUCH</span>
+              <span className={styles.eyebrow}>HIGHTOUCH</span>
               <h2>
                 Ils nous ont fait confiance.
                 <span> Découvrez ce que nous avons créé ensemble.</span>

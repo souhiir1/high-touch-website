@@ -43,12 +43,12 @@ export default function Hero() {
   }, [prefersReducedMotion]);
 
   return (
-    <section className={styles.hero} aria-label="Présentation de High Touch">
+    <section className={styles.hero} aria-label="Présentation de HighTouch">
       {/* BACKGROUND (Statique, sans parallaxe) */}
       <div className={styles.background}>
         <Image
           src="/hero.jpg"
-          alt="Équipe High Touch en réunion autour d'une stratégie de communication"
+          alt="Équipe HighTouch en réunion autour d'une stratégie de communication"
           fill
           priority
           quality={85}
@@ -160,7 +160,7 @@ export default function Hero() {
             <Link 
               href="/contact" 
               className={styles.secondaryButton}
-              aria-label="Démarrer un projet avec High Touch"
+              aria-label="Démarrer un projet avec HighTouch"
             >
               Démarrer un projet
             </Link>

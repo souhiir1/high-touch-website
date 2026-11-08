@@ -31,18 +31,18 @@ export default function Navbar() {
           href="/"
           className={styles.logo}
           onClick={closeMenu}
-          aria-label="High Touch - Accueil"
+          aria-label="HighTouch - Accueil"
         >
           <Image
             src="/hightouchlogo.png"
-            alt="High Touch"
+            alt="HighTouch"
             width={200}
             height={100}
             priority
             className={styles.logoImage}
           />
           <span className={styles.logoText}>
-            <strong>HIGH TOUCH</strong>
+            <strong>HIGHTOUCH</strong>
             <small>PROD & COMMUNICATION</small>
           </span>
         </Link>

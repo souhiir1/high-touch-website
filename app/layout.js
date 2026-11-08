@@ -23,14 +23,14 @@ export const metadata = {
   metadataBase: new URL("https://hightouch.tn"),
 
   title: {
-    default: "High Touch (HighTouch) | Agence de Communication & Marketing Digital",
-    template: "%s | High Touch",
+    default: "Hightouch (High Touch) | Agence de Communication & Marketing Digital",
+    template: "%s | Hightouch",
   },
 
   description:
-    "High Touch (HighTouch) est une agence de communication et de marketing digital en Tunisie. Nous accompagnons les marques en stratégie digitale, branding, social media, sponsoring et création de contenu.",
+    "Hightouch (HighTouch) est une agence de communication et de marketing digital en Tunisie. Nous accompagnons les marques en stratégie digitale, branding, social media, sponsoring et création de contenu.",
 
-  applicationName: "High Touch",
+  applicationName: "Hightouch",
 
   icons: {
     icon: "/hightouchlogo.png",
@@ -41,6 +41,7 @@ export const metadata = {
   keywords: [
     "High Touch",
     "HighTouch",
+    "hightouch",
     "HighTouch Tunisie",
     "High Touch Tunisie",
     "hightouch.tn",
@@ -62,9 +63,9 @@ export const metadata = {
     "marketing",
   ],
 
-  authors: [{ name: "High Touch" }],
-  creator: "High Touch",
-  publisher: "High Touch",
+  authors: [{ name: "HighTouch" }],
+  creator: "HighTouch",
+  publisher: "HighTouch",
 
   formatDetection: {
     email: false,
@@ -79,8 +80,8 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "fr_TN",
-    siteName: "High Touch",
-    title: "High Touch (HighTouch) | Agence de Communication & Marketing Digital",
+    siteName: "HighTouch",
+    title: "HighTouch (High Touch) | Agence de Communication & Marketing Digital",
     description:
       "High Touch, agence de communication et de marketing digital en Tunisie. Stratégie, création, production et performance au service de votre marque.",
     url: "https://hightouch.tn",
@@ -99,8 +100,8 @@ export const metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "High Touch",
-  alternateName: ["HighTouch", "HighTouch Tunisie"],
+  name: "Hightouch",
+  alternateName: ["High Touch", "HighTouch Tunisie"],
   url: "https://hightouch.tn",
   email: "comhightouch@gmail.com",
   telephone: "+21626605686",
@@ -109,8 +110,8 @@ const organizationSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "High Touch",
-  alternateName: "HighTouch",
+  name: "Hightouch",
+  alternateName: "High Touch",
   url: "https://hightouch.tn",
   inLanguage: "fr-TN",
 };

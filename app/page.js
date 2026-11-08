@@ -6,21 +6,21 @@ import ContactPreview from "./components/ContactPreview/ContactPreview";
 import ClientsStrip from "./components/ClientsStrip/ClientsStrip";
 
 export const metadata = {
-  title: "High Touch | Agence de Communication & Marketing Digital en Tunisie",
+  title: "HighTouch | Agence de Communication & Marketing Digital en Tunisie",
 
   description:
-    "High Touch (HighTouch) accompagne les entreprises en Tunisie avec des solutions de communication, marketing digital, social media, branding, création de contenu, photo, vidéo et media buying.",
+    "HighTouch (High Touch) accompagne les entreprises en Tunisie avec des solutions de communication, marketing digital, social media, branding, création de contenu, photo, vidéo et media buying.",
 
   alternates: {
     canonical: "https://hightouch.tn/",
   },
 
   openGraph: {
-    title: "High Touch | Agence de Communication & Marketing Digital",
+    title: "HighTouch | Agence de Communication & Marketing Digital",
     description:
-      "Découvrez High Touch, votre agence de communication et marketing digital en Tunisie : stratégie, création, production et performance.",
+      "Découvrez HighTouch, votre agence de communication et marketing digital en Tunisie : stratégie, création, production et performance.",
     url: "https://hightouch.tn/",
-    siteName: "High Touch",
+    siteName: "HighTouch",
     locale: "fr_TN",
     type: "website",
   },
@@ -30,8 +30,8 @@ export const metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  name: "High Touch",
-  alternateName: ["HighTouch", "HighTouch Tunisie"],
+  name: "HighTouch",
+  alternateName: ["High Touch", "HighTouch Tunisie"],
   description:
     "Agence de communication et marketing digital en Tunisie spécialisée en stratégie digitale, social media, branding, création de contenu, photo, vidéo et media buying.",
   url: "https://hightouch.tn",

@@ -43,7 +43,7 @@ export default function Footer() {
             <Link href="/" className={styles.logo}>
               <Image
                 src="/hightouchlogo.png"
-                alt="High Touch"
+                alt="HighTouch (hightouchlogo)"
                 width={50}
                 height={60}
                 priority
@@ -51,7 +51,7 @@ export default function Footer() {
               />
 
               <span className={styles.logoText}>
-                <strong>HIGH TOUCH</strong>
+                <strong>HIGHTOUCH</strong>
                 <small>PROD &amp; COMMUNICATION</small>
               </span>
             </Link>
@@ -159,7 +159,7 @@ export default function Footer() {
         {/* BOTTOM */}
         <div className={styles.bottom}>
           <p>
-            © 2026 High Touch. Tous droits réservés.
+            © 2026 HighTouch. Tous droits réservés.
           </p>
 
           <span>
