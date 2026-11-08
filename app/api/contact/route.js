@@ -37,8 +37,9 @@ ${message || "Aucun message renseigné"}
     `.trim();
 
     const { error } = await resend.emails.send({
-      from: "High Touch <onboarding@resend.dev>",
+      from: "HighTouch <noreply@hightouch.tn>",
       to: ["comhightouch@gmail.com"],
+      //  to: ["souhirwork@gmail.com"],
       subject: `Nouvelle demande - ${service} - ${name}`,
       text: emailContent,
       replyTo: email || undefined,

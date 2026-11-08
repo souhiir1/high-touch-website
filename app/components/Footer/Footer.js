@@ -43,7 +43,7 @@ export default function Footer() {
             <Link href="/" className={styles.logo}>
               <Image
                 src="/hightouchlogo.png"
-                alt="HighTouch (hightouchlogo)"
+                alt="HighTouch"
                 width={50}
                 height={60}
                 priority
@@ -165,6 +165,26 @@ export default function Footer() {
           <span>
             STRATÉGIE • CRÉATION • PRODUCTION • PERFORMANCE
           </span>
+        </div>
+
+        {/* DEVELOPMENT CREDIT */}
+        <div className={styles.developmentCredit}>
+          <span>Développé par</span>
+
+          <a
+            href="https://inovasphere.tech"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Site web Inova Sphere"
+          >
+            <Image
+              src="/inovasphere-logo.png"
+              alt="Inova Sphere"
+              width={110}
+              height={35}
+              className={styles.developerLogo}
+            />
+          </a>
         </div>
       </div>
     </footer>
